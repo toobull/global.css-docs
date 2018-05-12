@@ -1,0 +1,62 @@
+@import '~global.css/src/mixins/border';
+@import '../../assets/scss/export';
+
+.block-border {
+    .demo-out-of-the-box {
+        @include border-radius($color: $__border_color);
+
+        > .row {
+            // background-color: rgba(255, 243, 217, .4);
+            line-height: 2.4;
+            &:nth-child(n+2) {
+                @include border-top($color: $__border_color);
+            }
+
+            > .col-6 {
+                padding: .625em;
+                overflow: hidden;
+                text-align: right;
+            }
+            > .col-18 {
+                padding: .625em;
+                text-align: right;
+                > .col-12 {
+                    padding-right: 1.25em;
+                    background: #fff;
+
+                    &:nth-child(1) {
+                        color: #aaa;
+                    }
+                }
+            }
+        }
+        .border-normal {
+            border: 1px solid #dddddd;
+        }
+        .border-top-normal {
+            border-top: 1px solid #dddddd;
+        }
+        .border-bottom-normal {
+            border-bottom: 1px solid #dddddd;
+        }
+        .border-vertical-normal {
+            border-top: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+        }
+        .border-left-normal {
+            border-left: 1px solid #dddddd;
+        }
+        .border-right-normal {
+            border-right: 1px solid #dddddd;
+        }
+        .border-horizontal-normal {
+            border-left: 1px solid #dddddd;
+            border-right: 1px solid #dddddd;
+        }
+        .border-radius-normal {
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+        }
+    }
+}
+

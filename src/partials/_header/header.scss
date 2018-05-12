@@ -1,0 +1,84 @@
+@import '~global.css/src/mixins/grid';
+@import '~global.css/src/mixins/border';
+@import '../../assets/scss/export';
+
+.main {
+    > header {
+        @include grid($flex-direction: column, $justify-content: bottom);
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        padding: 0 1em;
+        width: 25%;
+
+        .title {
+            width: 100%;
+            background-color: #fff;
+            font-weight: 100;
+            font-size: 3em;
+        }
+        .title-name {
+            width: 100%;
+            color: #f35626;
+            background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: hue 60s infinite linear;
+        }
+
+        .nav-list {
+            @include grid($flex-direction: column, $justify-content: start);
+
+            .nav-item-title {
+                line-height: 2;
+                font-size: 1.6em;
+                font-weight: 500;
+            }
+            .nav-item {
+                padding-left: 1em;
+                line-height: 2;
+                font-size: 1.2em;
+                color: inherit;
+            }
+        }
+        .nav-list-mixins {
+            @include grid($flex-direction: column, $justify-content: start);
+        }
+
+        @media screen and (max-width: 1024px) {
+            padding-top: 2.4*3em;
+
+            .title {
+                position: fixed;
+                top: 0;
+                z-index: 99;
+            }
+        }
+        @media screen and (max-width: 576px) {
+            position: relative;
+            padding: 0 .8em;
+            width: 100%;
+            @include border-bottom($color: $__border_color);
+
+            .title {
+                position: static;
+            }
+
+            .nav-list-mixins {
+                @include grid($flex-direction: row, $justify-content: start, $align-items: center, $flex-wrap: wrap);
+            }
+        }
+    }
+}
+
+@keyframes hue {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(-360deg);
+    }
+}
+

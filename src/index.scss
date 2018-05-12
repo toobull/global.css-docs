@@ -1,0 +1,70 @@
+@import '~global.css/global';
+@import '~highlight.js/styles/rainbow.css';
+@import './assets/scss/export';
+
+html {
+    -webkit-font-smoothing: antialiased;
+    color: #666;
+    font-weight: 300;
+    font-size: $__font_size_base;
+    line-height: 1.48;
+    transition: font-size .4s;
+}
+
+.main {
+    margin-left: 25%;
+    max-width: 1024px;
+    min-width: 320px;
+    color: #666;
+
+    .block-mixins {
+        padding: 1em;
+    }
+    .pre-title {
+        margin-bottom: -1em;
+        font-size: .8em;
+    }
+    .title {
+        line-height: 2.4;
+        font-size: 2.25em;
+        color: #333;
+    }
+
+    .desc {
+        font-size: 1em;
+        color: #999;
+    }
+
+    .title-sub {
+        padding: .625em 0;
+        font-size: 1.5em;
+        color: #666;
+    }
+    pre {
+        font-size: 0.9em;
+        line-height: 1.25;
+        background: #f3f3f3;
+        border-radius: 3px;
+        overflow-x: auto;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .main {
+        padding-top: 2.4*3em;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    html {
+        font-size: $__font_size_576;
+    }
+    .main {
+        margin: 0 auto;
+        padding-top: 0;
+        .block-mixins {
+            padding: .8em;
+        }
+    }
+}

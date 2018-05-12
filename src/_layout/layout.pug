@@ -1,0 +1,20 @@
+block var
+    - var __head_title = ''
+    - var __head_charset = ''
+    - var __head_viewport = ''
+    - var __body_class = ''
+doctype html
+html
+    head
+        title=__head_title
+        meta(charset=__head_charset?__head_charset:'utf-8')
+        if __head_viewport
+            meta(name='viewport', content=__head_viewport)
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        block css_base
+        block css
+        block script_head
+    body(class=__body_class)
+        block content
+        block script_base
+        block script
