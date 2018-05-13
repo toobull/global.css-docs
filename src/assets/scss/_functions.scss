@@ -1,4 +1,4 @@
 // 根据px计算em
 @function em($size, $font-size-context:$__font_size_base_cal_em) {
-    @return ($target-size / $font-size-context) * 1em;
+    @return ($size / $font-size-context) * 1em;
 }
