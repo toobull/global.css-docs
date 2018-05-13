@@ -14,7 +14,7 @@ module.exports = {
         index: '@/index',
     },
     output: {
-        path: path.resolve('./public'),
+        path: path.resolve('./docs'),
         publicPath: '/',
         filename: '[name].[hash].js',
         chunkFilename: '[name].[hash].js',
@@ -79,12 +79,13 @@ function getSassLoader() {
 }
 
 function getPlugins() {
-    const plugins = []
+    const plugins = [
+        new cleanWebpackPlugin(['*'], {
+            root: path.resolve('./docs')
+        })
+    ]
 
     if (is_production) {
-        plugins.push(new cleanWebpackPlugin(['*'], {
-            root: path.resolve('./public')
-        }))
         plugins.push(new MiniCssExtractPlugin({
             filename: "[name].[hash].css",
             chunkFilename: "[id].[hash].css"
