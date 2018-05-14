@@ -3,14 +3,7 @@
         height: 30px;
         line-height: 30px;
         text-align: center;
-        background-color: #e5e5e5;
-        border-bottom: 1px solid #ccc;
-        border-left: 1px solid #ccc;
-        &:nth-child(1),
-        &:nth-child(2n) {
-
-            border-left: 0;
-        }
+        background-color: #f5f5f5;
     }
 
     .grid {}

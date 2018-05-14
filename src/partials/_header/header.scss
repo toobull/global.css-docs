@@ -42,6 +42,13 @@
                 font-size: 1.2em;
                 color: inherit;
             }
+            .nav-item-sub {
+                margin-left: 1.6em;
+                padding-left: 1em;
+                line-height: 1.6;
+                font-size: 1em;
+                color: inherit;
+            }
         }
         .nav-list-mixins {
             @include grid($flex-direction: column, $justify-content: start);
@@ -54,6 +61,9 @@
                 position: fixed;
                 top: 0;
                 z-index: 99;
+            }
+            .nav-item-sub {
+                display: none;
             }
         }
         @media screen and (max-width: $__size_sm) {

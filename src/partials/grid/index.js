@@ -17,10 +17,12 @@ function getGrid() {
     let max = 24
     let i = max
     while (i--) {
-        grid.push(i + 1)
+        if(i<11) continue
+        
         if (max - i - 1) {
             grid.push(max - i - 1)
         }
+        grid.push(i + 1)
     }
     return grid
 }
