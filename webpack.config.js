@@ -15,7 +15,7 @@ module.exports = {
     },
     output: {
         path: path.resolve('./docs'),
-        publicPath: '/global.css-docs/',
+        publicPath: '/',
         filename: '[name].[hash].js',
         chunkFilename: '[name].[hash].js',
     },
