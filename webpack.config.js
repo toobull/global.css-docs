@@ -80,8 +80,9 @@ function getSassLoader() {
 
 function getPlugins() {
     const plugins = [
-        new cleanWebpackPlugin(['*'], {
-            root: path.resolve('./docs')
+        new cleanWebpackPlugin(['**/*.*'], {
+            root: path.resolve('./docs'),
+            exclude: ['CNAME']
         })
     ]
 
