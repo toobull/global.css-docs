@@ -1,0 +1,28 @@
+.block-params-table {
+    padding: 0 0 em(10px) 0;
+    overflow-x: auto;
+
+    code {
+        padding: em(2px) em(8px);
+        border-radius: em(4px);
+        background-color: #f5f5f5;
+    }
+    .params-table-title {
+        padding: em(10px) 0;
+        min-width: $__size_sm;
+        line-height: 2;
+        font-weight: 500;
+        > div {
+            padding-left: em(6px);
+        }
+    }
+    .params-table-item {
+        padding: em(6px) 0;
+        min-width: $__size_sm;
+        line-height: 2;
+
+        em{
+            font-size: em(12px);
+        }
+    }
+}

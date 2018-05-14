@@ -1,0 +1,16 @@
+mixin paramsTable(paramsSet)
+    .block-params-table
+        .row.params-table-title.border-bottom
+            .col-5 Name
+            .col-5 Type
+            .col-5 Default
+            .col-9 Description
+        each _params in paramsSet
+            .row.params-table-item.border-bottom
+                .col-5
+                    code= _params.name
+                .col-5 
+                    code= _params.type
+                .col-5 
+                    code= _params.val
+                .col-9 !{_params.desc}

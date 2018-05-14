@@ -47,7 +47,7 @@
             @include grid($flex-direction: column, $justify-content: start);
         }
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: $__size_md) {
             padding-top: 2.4*3em;
 
             .title {
@@ -56,7 +56,7 @@
                 z-index: 99;
             }
         }
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: $__size_sm) {
             position: relative;
             padding: 0 .8em;
             width: 100%;

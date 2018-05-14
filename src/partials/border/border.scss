@@ -2,24 +2,24 @@
 @import '../../assets/scss/export';
 
 .block-border {
-    .intro-mixins{
-        padding: 0 0 em(10px) 0;
+    // .intro-mixins{
+    //     padding: 0 0 em(10px) 0;
 
-        code{
-            padding: em(2px) em(8px);
-            border-radius: em(4px);
-            background-color: #f5f5f5;
-        }
-        .mixins-params-title{
-            padding: em(10px) 0;
-            line-height: 2;
-            font-weight: 500;
-        }
-        .mixins-params{
-            padding: em(6px) 0;
-            line-height: 2;
-        }
-    }
+    //     code{
+    //         padding: em(2px) em(8px);
+    //         border-radius: em(4px);
+    //         background-color: #f5f5f5;
+    //     }
+    //     .mixins-params-title{
+    //         padding: em(10px) 0;
+    //         line-height: 2;
+    //         font-weight: 500;
+    //     }
+    //     .mixins-params{
+    //         padding: em(6px) 0;
+    //         line-height: 2;
+    //     }
+    // }
 
     .demo-out-of-the-box {
         @include border-radius($color: $__border_color);

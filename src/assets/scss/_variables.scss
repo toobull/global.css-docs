@@ -1,7 +1,13 @@
 // font size
-$__font_size_base_cal_em: 16px !default;
+$__font_size_base_calc_em: 16px !default;
 $__font_size_base: 16px !default;
 $__font_size_576: 14px !default;
+
+// size
+$__width_max: 1024px;
+$__width_min: 320px;
+$__size_md: 1024px;
+$__size_sm: 576px;
 
 // color
 $__border_color: #f0cc7e;

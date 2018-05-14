@@ -1,48 +1,47 @@
+include ../../mixins/paramsTable/paramsTable
+
 .block-mixins.block-border#Border
     .pre-title mixins
     .title Border
-    .desc 
-    .title-sub retina resolution's thin border vs normal border.
-    .intro-mixins
-        .title-sub Arguments
-        .row.mixins-params-title
-            .col-4 Name
-            .col-4 Type
-            .col-4 Default
-            .col-12 Description
-        .row.mixins-params.border-top
-            .col-4 
-                code $width
-            .col-4 
-                code #{`<length>`}
-            .col-4 
-                code 1px
-            .col-12 
-        .row.mixins-params.border-top
-            .col-4 
-                code $style
-            .col-4 
-                code #{`<string>`}
-            .col-4 
-                code solid
-            .col-12 
-        .row.mixins-params.border-top
-            .col-4 
-                code $color
-            .col-4 
-                code #{`<color>`}
-            .col-4 
-                code #dddddd
-            .col-12 
-        .row.mixins-params.border-top
-            .col-4 
-                code $pseudo
-            .col-4 
-                code #{`<string>`}
-            .col-4 
-                code ':after'
-            .col-12 
-
+    .desc The Border mixins include 
+        code border
+        code border-radius
+        code border-top
+        code border-bottom
+        code border-vertical
+        code border-left
+        code border-right
+        code border-horizontal
+        . 
+            , They have same arguments, get detail below.
+    .title-sub Arguments
+    +paramsTable([
+        {
+            name: '$width',
+            type: '<length>',
+            val: '1px',
+            desc: 'Border width, default is 1px, and you cound get 1 physical pixel, it looks great on retina screen device.'
+        },
+        {
+            name: '$style',
+            type: '<string>',
+            val: 'solid',
+            desc: 'Of course it support all border-style\'s val, but 1px hack just support <code>solid</code> mode.'
+        },
+        {
+            name: '$color',
+            type: '<color>',
+            val: '#dddddd',
+            desc: 'Any valid color.'
+        },
+        {
+            name: '$pseudo',
+            type: '<string>',
+            val: '\':after\'',
+            desc: 'Support 2 types pseudo-element  `:after`&`:before`, use like this <code>\':after\'</code> <code>\':before\'</code>. <em class="note">NOTE: Dont miss out quotes <code>\'</code>, or be invalid.</em>'
+        },
+    ])
+    .title-sub The demo retina resolution's thin border vs normal border.    
     .demo-out-of-the-box
         .row
             .col-6 border

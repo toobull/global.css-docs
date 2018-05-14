@@ -2,19 +2,21 @@
 @import '~highlight.js/styles/rainbow.css';
 @import './assets/scss/export';
 
+@import './mixins/paramsTable/paramsTable';
+
 html {
     -webkit-font-smoothing: antialiased;
     color: #666;
     font-weight: 300;
     font-size: $__font_size_base;
-    line-height: 1.48;
     transition: font-size .4s;
 }
 
 .main {
     margin-left: 25%;
-    max-width: 1024px;
-    min-width: 320px;
+    max-width: $__width_max;
+    min-width: $__width_min;
+    line-height: 1.48;
     color: #666;
 
     .block-mixins {
@@ -31,14 +33,27 @@ html {
     }
 
     .desc {
+        line-height: 1.68;
         font-size: 1em;
         color: #999;
+        code {
+            margin: 0 em(6px);
+        }
     }
 
     .title-sub {
         padding: .625em 0;
         font-size: 1.5em;
         color: #666;
+    }
+
+    .note{
+        color: #f00;
+    }
+    code {
+        padding: em(2px) em(8px);
+        border-radius: em(4px);
+        background-color: #f5f5f5;
     }
     pre {
         font-size: 0.9em;
@@ -47,16 +62,15 @@ html {
         border-radius: 3px;
         overflow-x: auto;
     }
-
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $__size_md) {
     .main {
         padding-top: 2.4*3em;
     }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: $__size_sm) {
     html {
         font-size: $__font_size_576;
     }
@@ -68,3 +82,4 @@ html {
         }
     }
 }
+
