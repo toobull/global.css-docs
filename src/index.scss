@@ -69,7 +69,7 @@ html {
     .row-example-shower {
         padding: em(10px) 0;
         width: 100%;
-        height: em(48px);
+        min-height: em(48px);
     }
     .row-example-code {}
 }
