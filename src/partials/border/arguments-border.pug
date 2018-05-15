@@ -1,0 +1,28 @@
+include ../../mixins/paramsTable/paramsTable
+
++paramsTable([
+    {
+        name: '$width',
+        type: '<length>',
+        val: '1px',
+        desc: 'Border width, default is 1px, and you cound get 1 physical pixel, it looks great on retina screen device.'
+    },
+    {
+        name: '$style',
+        type: '<string>',
+        val: 'solid',
+        desc: 'Of course it support all border-style\'s val, but 1px hack just support <code>solid</code> mode.'
+    },
+    {
+        name: '$color',
+        type: '<color>',
+        val: '#dddddd',
+        desc: 'Any valid color.'
+    },
+    {
+        name: '$pseudo',
+        type: '<string>',
+        val: '\':after\'',
+        desc: 'Support 2 types pseudo-element  `:after`&`:before`, use like this <code>\':after\'</code> <code>\':before\'</code>. <em class="note">NOTE: Dont miss out quotes <code>\'</code>, or be invalid.</em>'
+    },
+])

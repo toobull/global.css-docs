@@ -35,7 +35,7 @@ html {
     .desc {
         line-height: 1.68;
         font-size: 1em;
-        color: #999;
+        color: #666;
         code {
             margin: 0 em(6px);
         }
@@ -47,7 +47,7 @@ html {
         color: #666;
     }
 
-    .note{
+    .note {
         color: #f00;
     }
     div > code {
@@ -60,7 +60,20 @@ html {
         border-radius: em(4px);
         white-space: pre;
     }
+
 }
+
+.block-usage-example {
+    padding: em(10px) 0;
+
+    .row-example-shower {
+        padding: em(10px) 0;
+        width: 100%;
+        height: em(48px);
+    }
+    .row-example-code {}
+}
+
 
 @media screen and (max-width: $__size_md) {
     .main {

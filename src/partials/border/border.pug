@@ -1,9 +1,7 @@
-include ../../mixins/paramsTable/paramsTable
-
 .block-mixins.block-border#Border
     .pre-title mixins
     .title Border
-    .desc The Border mixins include 
+    .desc The Border mixins aim to resolve retina resolution border's 1 physical pixel, It include 
         code border
         code border-radius
         code border-top
@@ -15,79 +13,18 @@ include ../../mixins/paramsTable/paramsTable
         . 
             , They have same arguments, get detail below.
     .title-sub Arguments
-    +paramsTable([
-        {
-            name: '$width',
-            type: '<length>',
-            val: '1px',
-            desc: 'Border width, default is 1px, and you cound get 1 physical pixel, it looks great on retina screen device.'
-        },
-        {
-            name: '$style',
-            type: '<string>',
-            val: 'solid',
-            desc: 'Of course it support all border-style\'s val, but 1px hack just support <code>solid</code> mode.'
-        },
-        {
-            name: '$color',
-            type: '<color>',
-            val: '#dddddd',
-            desc: 'Any valid color.'
-        },
-        {
-            name: '$pseudo',
-            type: '<string>',
-            val: '\':after\'',
-            desc: 'Support 2 types pseudo-element  `:after`&`:before`, use like this <code>\':after\'</code> <code>\':before\'</code>. <em class="note">NOTE: Dont miss out quotes <code>\'</code>, or be invalid.</em>'
-        },
-    ])
+    include arguments-border.pug
     .title-sub Example
-    .desc <code>border</code> mixin usage.
-    .row.row-example-shower
-        .col.example-mixins-border
-    .row.gutter.row-example-code
-        .col-12 SCSS
-            pre.code-source
-                code.hljs.scss
-                    :highlight2(language='scss')
-                        @import '~global.css/src/mixins/border';
+    include usage-border.pug
+    include usage-border-radius.pug
+    include usage-border-top.pug
+    include usage-border-bottom.pug
+    include usage-border-vertical.pug
+    include usage-border-left.pug
+    include usage-border-right.pug
+    include usage-border-horizontal.pug
 
-                        .example-mixins-border{
-                            @include border($color: #48cfad);
-                        }
-        .col-12 CSS Output
-            pre.code-output
-                code.hljs.scss
-                    :highlight2(language='css')
-                        .border {
-                            border: 1px solid #48cfad;
-                        }
-
-                        @media screen and (-webkit-min-device-pixel-ratio: 2) {
-                            .border {
-                                position: relative;
-                                border: 0;
-                            }
-
-                            .border:after {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                content: "";
-                                width: 100%;
-                                height: 100%;
-                                background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.5, transparent), color-stop(0.5, #48cfad)), -webkit-gradient(linear, left top, right top, color-stop(0.5, transparent), color-stop(0.5, #48cfad)), -webkit-gradient(linear, left top, left bottom, color-stop(0.5, transparent), color-stop(0.5, #48cfad)), -webkit-gradient(linear, right top, left top, color-stop(0.5, transparent), color-stop(0.5, #48cfad));
-                                background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
-                                background-repeat: no-repeat;
-                                background-position: top, right, bottom, left;
-                                padding: 1px;
-                                box-sizing: border-box;
-                                z-index: 10;
-                                pointer-events: none;
-                            }
-                        }
-
-    .title-sub The demo retina resolution's thin border vs normal border.    
+    .desc The demo retina resolution's thin border vs normal border.    
     .demo-out-of-the-box
         .row
             .col-6 border
