@@ -1,0 +1,14 @@
+@import '~global.css/src/mixins/ripple';
+@import '~global.css/src/mixins/border';
+
+.block-ripple{
+    .example-mixins-ripple{
+        margin: 0 auto;
+        padding: 5px 10px;
+        width: 200px;
+        text-align: center;
+        background-color: #f5f5f5;
+        @include ripple($color: #48cfad);
+        @include border-radius($color: #48cfad, $radius: 10px);
+    }
+}

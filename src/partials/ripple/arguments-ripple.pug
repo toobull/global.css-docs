@@ -1,0 +1,22 @@
+include ../../mixins/paramsTable/paramsTable
+
++paramsTable([
+    {
+        name: '$color',
+        type: '<color>',
+        val: '#000',
+        desc: 'Any valid color.'
+    },
+    {
+        name: '$opacity',
+        type: '<number>',
+        val: '.2',
+        desc: 'greater than or equal 0 && less than or equal 1.'
+    },
+    {
+        name: '$pseudo',
+        type: '<string>',
+        val: '\':before\'',
+        desc: 'Support 2 types pseudo-element  `:after`&`:before`, use like this <code>\':after\'</code> <code>\':before\'</code>. <em class="note">NOTE: Dont miss out quotes <code>\'</code>, or be invalid.</em>'
+    },
+])
