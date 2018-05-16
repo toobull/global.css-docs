@@ -1,11 +1,97 @@
+@import '~global.css/src/mixins/grid';
+@import '~global.css/src/mixins/border';
+
 .block-grid {
-    .col {
-        height: 30px;
-        line-height: 30px;
+
+    .example-mixins-grid {
+        @include grid($flex-flow: row);
         text-align: center;
-        background-color: #f5f5f5;
+        color: #fff;
+
+        .example-mixins-grid-col-8 {
+            @include grid-col($col: 8, $grid-columns: 24);
+            @include border-right($color: #f5f5f5);
+            background-color: #48cfad;
+        }
+        .example-mixins-grid-col-16 {
+            @include grid-col($col: 16, $grid-columns: 24);
+            background-color: #48cfad;
+        }
     }
 
-    .grid {}
+    .example-mixins-grid-gutter {
+        @include grid($flex-flow: row, $gutter: 40px);
+        text-align: center;
+        color: #fff;
 
+        .example-mixins-grid-col-8 {
+            @include grid-col($col: 8, $grid-columns: 24);
+            @include border-right($color: #f5f5f5);
+            background-color: #48cfad;
+        }
+        .example-mixins-grid-col-16 {
+            @include grid-col($col: 16, $grid-columns: 24);
+            background-color: #48cfad;
+        }
+    }
+
+    .example-mixins-grid-col {
+        @include grid($flex-flow: row);
+        text-align: center;
+        color: #fff;
+
+        .example-mixins-grid-col-8 {
+            @include grid-col($col: 8, $grid-columns: 24);
+            background-color: #48cfad;
+            &:nth-child(n+2){
+                @include border-left($color: #f5f5f5);
+            }
+        }
+    }
+
+    .example-mixins-grid-col-gutter {
+        @include grid($flex-flow: row wrap, $gutter: 2%);
+        /*
+            above equal the simple format like this:
+            @include grid($flex-flow: row wrap);
+            @include grid-gutter($margin: 0 ((2% / 2) * -1));
+        */
+        text-align: center;
+        color: #fff;
+
+        .example-mixins-grid-col-8 {
+            @include grid-col($col: 8, $grid-columns: 24, $gutter: 2%);
+            /*
+                **NOTE**: !important! above usage *not equal* below code, 
+                because of *grid-col-gutter* used in *grid-col* is complex,
+                can't easy split in two single mixins include.
+                
+                @include grid-col($col: 8, $grid-columns: 24);
+                @include grid-col-gutter($margin: 0 (2% / 2) 2%);
+            */
+            background-color: #48cfad;
+        }
+    }
+
+    .example-mixins-grid-col-gutter-condensed {
+        @include grid($flex-flow: row wrap, $gutter: 2%);
+        text-align: center;
+        color: #fff;
+
+        .example-mixins-grid-col-8 {
+            @include grid-col($col: 8, $grid-columns: 24, $gutter: 2%, $condensed: true);
+            @include border-bottom($color: #f5f5f5);
+            background-color: #48cfad;
+        }
+    }
+
+    .grid {
+        .col {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+    }
 }
+

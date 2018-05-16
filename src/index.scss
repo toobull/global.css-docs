@@ -50,6 +50,11 @@ html {
     .note {
         color: #f00;
     }
+    code.light {
+        font-size: em(18px);
+        color: #fff;
+        background-color: #48cfad;
+    }
     div > code {
         padding: em(2px) em(8px);
         border-radius: em(4px);
@@ -67,9 +72,9 @@ html {
     padding: em(10px) 0;
 
     .row-example-shower {
-        padding: em(10px) 0;
+        padding: em(10px);
         width: 100%;
-        min-height: em(48px);
+        background-color: #f0f0f0;
     }
     .row-example-code {}
 }

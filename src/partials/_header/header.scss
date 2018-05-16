@@ -13,10 +13,17 @@
         width: 25%;
 
         .title {
+            position: relative;
             width: 100%;
             background-color: #fff;
             font-weight: 100;
             font-size: 3em;
+
+            .shields{
+                position: absolute;
+                bottom: 0;
+                font-size: 0;
+            }
         }
         .title-name {
             width: 100%;
@@ -29,6 +36,7 @@
         }
 
         .nav-list {
+            padding-top: em(30px);
             @include grid($flex-direction: column, $justify-content: start);
 
             .nav-item-title {
@@ -73,7 +81,8 @@
             @include border-bottom($color: $__border_color);
 
             .title {
-                position: static;
+                position: relative;                
+                // position: static;
             }
 
             .nav-list-mixins {

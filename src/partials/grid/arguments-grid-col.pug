@@ -1,0 +1,76 @@
+include ../../mixins/paramsTable/paramsTable
+
++paramsTable([
+    {
+        name: '$col',
+        type: 'null|<number>|<length>|<string>',
+        val: 'null',
+        desc: `<code>null</code> is no set columns. <code>${'<number>'.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code> is number of columns. <code>initial</code>, <code>auto</code>, <code>equal</code>, <code>none</code> and <code>breakpoint</code> are preset columns. <code>${'<length>'.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code> is unit set columns.`
+    },
+    {
+        name: '$grid-columns',
+        type: '<number>',
+        val: '24',
+        desc: 'the total number of columns in the grid.'
+    },
+    {
+        name: '$col-offset',
+        type: 'null|<length>',
+        val: 'null',
+        desc: `offset a width of columns (<code>${'<no percentage length>'.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code> is experimental stage).`
+    },
+    {
+        name: '$gutter',
+        type: 'null|<length>',
+        val: 'null',
+        desc: `<code>null</code> is no margin between columns. <code>${'<length>'.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code> generate a margin of between columns (<code>${'<no percentage length>'.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code> is experimental stage).`
+    },
+    {
+        name: '$condensed',
+        type: '<boolean>',
+        val: 'false',
+        desc: '<code>true</code> should cut the top and bottom margins of the columns.'
+    },
+    {
+        name: '$align-self',
+        type: 'null|<string>',
+        val: 'null',
+        desc: '<code>null</code> | <code>auto</code> | <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>baseline</code> | <code>stretch</code>.'
+    },
+    {
+        name: '$flex-grow',
+        type: '<number>',
+        val: '0',
+        desc: 'grow relative to the rest of the columns in the grid.'
+    },
+    {
+        name: '$flex-shrink',
+        type: '<number>',
+        val: '1',
+        desc: 'shrink relative to the rest of the columns in the grid.'
+    },
+    {
+        name: '$flex-basis',
+        type: 'content|<length>',
+        val: 'auto',
+        desc: 'initial main size of the columns.'
+    },
+    {
+        name: '$order',
+        type: 'null|<integer>',
+        val: 'null',
+        desc: 'control the order in which appear in the grid container.'
+    },
+    {
+        name: '$grid-type',
+        type: '<string>',
+        val: 'skeleton',
+        desc: '<code>skeleton</code> | <code>margin-offset</code>, the type of grid.'
+    },
+    {
+        name: '$last-child',
+        type: '<boolean>',
+        val: 'false',
+        desc: '<code>true</code> | <code>false</code>, adjust the last-child of the columns, if the <code>$grid-type</code> is <code>margin-offset</code>.'
+    },
+])

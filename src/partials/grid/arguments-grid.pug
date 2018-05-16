@@ -1,0 +1,58 @@
+include ../../mixins/paramsTable/paramsTable
+
++paramsTable([
+    {
+        name: '$display',
+        type: '<string>',
+        val: 'flex',
+        desc: '<code>flex</code> | <code>inline-flex</code>, generate a block-level or an inline-level grid container.'
+    },
+    {
+        name: '$flex-direction',
+        type: 'null|<string>',
+        val: 'null',
+        desc: '<code>null</code> | <code>row</code> | <code>row-reverse</code> | <code>column</code> | <code>column-reverse</code>.'
+    },
+    {
+        name: '$flex-wrap',
+        type: 'null|<string>',
+        val: 'null',
+        desc: '<code>null</code> | <code>nowrap</code> | <code>wrap</code> | <code>wrap-reverse</code>.'
+    },
+    {
+        name: '$flex-flow',
+        type: 'null|<string>',
+        val: 'null',
+        desc: '<code>null</code> | <code>[row | row-reverse | column | column-reverse]</code> <code>[nowrap | wrap | wrap-reverse]</code>, a shorthand for setting the flex-direction and flex-wrap properties.'
+    },
+    {
+        name: '$justify-content',
+        type: 'null|<string>',
+        val: 'null',
+        desc: '<code>null</code> | <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code> | <code>space-around</code>, defines the alignment along the main axis.'
+    },
+    {
+        name: '$align-items',
+        type: 'null|<string>',
+        val: 'null',
+        desc: '<code>null</code> | <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>baseline</code> | <code>stretch</code>.'
+    },
+    {
+        name: '$align-content',
+        type: 'null|<string>',
+        val: 'null',
+        desc: '<code>null</code> | <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code> | <code>space-around</code> | <code>stretch</code>.'
+    },
+    {
+        name: '$gutter',
+        type: 'null|<length>',
+        val: 'null',
+        desc: `<code>null</code> is no margin of both ends of the grid. <code>${'<length>'.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code> generate a margin of horizontal both ends of the grid.`
+    },
+    {
+        name: '$grid-type',
+        type: '<string>',
+        val: 'skeleton',
+        desc: '<code>skeleton</code> | <code>margin-offset</code>, the type of grid.'
+    },
+])

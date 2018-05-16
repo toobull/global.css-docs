@@ -1,16 +1,45 @@
 .block-mixins.block-grid#Grid
     .pre-title mixins
     .title Grid
-    .desc coming soon...
-    .title-sub  The demo default <code>.grid</code>, grid has no gutter.
+    .desc The Grid mixins are very powerful, based on flexbox. It inlude 4 mixins #[code grid] #[code grid-gutter] #[code grid-col] #[code grid-col-gutter],
+        | #[code grid-gutter] usually used in #[code grid] mixin, and #[code grid-col-gutter] used in #[code grid-col] mixin, 
+        | of course you can use all mixins on any suit position.
+    
+    .block-mixins-sub#UsageGrid
+        .title-sub #[code.light grid] Arguments
+        include arguments-grid.pug
+        .title-sub Example
+        include usage-grid.pug
+
+    .block-mixins-sub#UsageGridGutter
+        .title-sub #[code.light grid-gutter] Arguments
+        include arguments-grid-gutter.pug
+        .title-sub Example
+        include usage-grid-gutter.pug
+
+    .block-mixins-sub#UsageGridCol
+        .title-sub #[code.light grid-col] Arguments
+        include arguments-grid-col.pug
+        .title-sub Example
+        include usage-grid-col.pug
+
+    .block-mixins-sub#UsageGridColGutter
+        .title-sub #[code.light grid-col-gutter] Arguments
+        .desc Generate the margins around columns. #[code grid-gutter] mixin alias.
+        include arguments-grid-col-gutter.pug
+        .title-sub Example
+        include usage-grid-col-gutter.pug
+
+
+    .desc The demo default <code>.grid</code>, defualt grid has no gutter.
     .grid
         for _col, _i in grid
             .col.border-bottom(class=[`col-${_col}`, _i%2==1?'border-right':''])= `col-${_col}`
-    .title-sub The demo <code>.grid.gutter</code>, grid with gutter.
+    .desc The demo <code>.grid.gutter</code>, grid with gutter.
     .grid.gutter
         for _col, _i in grid
             .col(class=[`col-${_col}`])= `col-${_col}`
-    .title-sub The demo <code>.grid.gutter.condensed</code>, grid with gutter, but condensed.
+    .desc The demo <code>.grid.gutter.condensed</code>, grid with gutter, but condensed.
     .grid.gutter.condensed
         for _col, _i in grid
             .col.border-bottom(class=[`col-${_col}`])= `col-${_col}`
