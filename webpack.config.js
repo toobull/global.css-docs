@@ -33,18 +33,6 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jpg|gif|ico|webm|mp3|mp4|eot|svg|ttf|woff)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 8192,
-                            fallback: 'file-loader',
-                        }
-                    }
-                ]
-            },
-            {
                 test: /\.(scss|sass)$/,
                 use: [
                     ...getSassLoader()
@@ -112,6 +100,7 @@ function getHtmlPlugins() {
         {
             filename: 'index.html',
             chunks: ['index'],
+            favicon: './src/assets/favicon.ico',
             template: './src/index.pug',
             minify: false,
             inject: true,
