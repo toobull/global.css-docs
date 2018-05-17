@@ -4,11 +4,12 @@
 
 .main {
     > header {
-        @include grid($flex-direction: column, $justify-content: bottom);
+        // @include grid($flex-direction: column, $justify-content: bottom);
         position: fixed;
         left: 0;
         top: 0;
         bottom: 0;
+        z-index: 99;
         padding: 0 1em;
         width: 25%;
         overflow-y: auto;
@@ -37,7 +38,7 @@
         }
 
         .nav-list {
-            padding-top: em(30px);
+            padding: em(30px) 0;
             @include grid($flex-direction: column, $justify-content: start);
 
             .nav-item-title {
@@ -86,6 +87,9 @@
                 // position: static;
             }
 
+            .nav-list{
+                padding-bottom: 0;
+            }
             .nav-list-mixins {
                 @include grid($flex-direction: row, $justify-content: start, $align-items: center, $flex-wrap: wrap);
             }
