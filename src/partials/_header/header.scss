@@ -4,7 +4,6 @@
 
 .main {
     > header {
-        // @include grid($flex-direction: column, $justify-content: bottom);
         position: fixed;
         left: 0;
         top: 0;
@@ -21,10 +20,28 @@
             font-weight: 100;
             font-size: 3em;
 
-            .shields{
+            .shields {
                 position: absolute;
                 bottom: 0;
                 font-size: 0;
+
+                > a {
+                    margin-right: 10px;
+                    display: inline-block;
+                    vertical-align: top;
+                }
+
+                .github-logo svg {
+                    color: #222;
+                    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(black), to(rgba(0, 0, 0, 0.75)));
+                    transition: 0.5s color ease-in;
+                    fill: currentColor;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #4183C4;
+                    }
+                }
             }
         }
         .title-name {
@@ -83,11 +100,10 @@
             @include border-bottom($color: $__border_color);
 
             .title {
-                position: relative;                
-                // position: static;
+                position: relative;
             }
 
-            .nav-list{
+            .nav-list {
                 padding-bottom: 0;
             }
             .nav-list-mixins {
